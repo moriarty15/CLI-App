@@ -37,7 +37,7 @@ async function addContact(name, email, phone) {
 // удаление контакта по id
 async function removeContact(contactId) {
     const arr = await listContacts();
-    const updataArr = arr.filter(e => e.id !== contactId);
+    const updataArr = arr.filter(e => e.id != contactId);
     await fs.writeFile(contactsPath, JSON.stringify(updataArr));
     console.log(updataArr);
 }
